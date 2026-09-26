@@ -1,0 +1,45 @@
+{
+  "name": "genpark-agent-tool-permission-rbac-validator-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Role-based access control and tool privilege attenuator preventing unauthorized tool invocations and privilege escalations.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "agent-security",
+  "tags": [
+    "rbac-validator",
+    "tool-permission",
+    "least-privilege",
+    "agent-governance",
+    "privilege-escalation"
+  ],
+  "inputs": {
+    "agent_id": {
+      "type": "string",
+      "default": "agent_junior_coder_02"
+    },
+    "assigned_role": {
+      "type": "string",
+      "default": "WORKER"
+    },
+    "requested_tool": {
+      "type": "string",
+      "default": "run_shell_destructive"
+    }
+  },
+  "outputs": {
+    "validation_id": {
+      "type": "string"
+    },
+    "is_permitted": {
+      "type": "boolean"
+    },
+    "arbitrated_verdict": {
+      "type": "string"
+    },
+    "security_risk_level": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
